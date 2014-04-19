@@ -1,0 +1,20 @@
+<h2>Project Name:</h2>
+<p>
+  <strong><%= @project.project_name %></strong>
+</p>
+
+<h2>Issues</h2>
+<% @project.issues.each do |issue| %>
+
+  <%= render 'issues/show', :issue => issue %>  
+
+  <p>
+  	<%= link_to 'Edit', edit_project_issue_path(@project.id, issue.id) %>
+  	<%= link_to 'Delete', project_issue_path(@project.id, issue.id), method: :delete, data: { confirm: "Are you sure?"} %>
+  </p>
+
+<% end %>
+
+<%= render 'issues/new' %>
+
+<%= link_to 'Back to projects', projects_path %>

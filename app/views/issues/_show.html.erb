@@ -1,0 +1,19 @@
+  <p>
+  	<strong>ID:</strong>
+  	<%= issue.id%>
+  </p>
+  <p>
+  	<strong>Title:</strong>
+  	<%= issue.title%>
+  </p>
+  <p>
+  	<strong>Description:</strong>
+  	<%= issue.description%>
+  </p>
+
+  <% statusArray = ["NEW", "IN PROGRESS", "COMPLETED", "WONT FIX"] %>
+
+  <p>
+  	<strong>Status:</strong>
+  	<%= statusArray.at(issue.status - 1)%>
+  </p>
